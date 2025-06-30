@@ -1,6 +1,6 @@
 # SankeyMOSAIC 📊➡️🖼️
 
-Turns popular Sankey diagram generator [SankeyMATIC](sankeymatic.com/build) into an image display.
+Turns popular Sankey diagram generator [SankeyMATIC](https://sankeymatic.com/build) into an image display.
 
 ## ⚙️ Usage
 
