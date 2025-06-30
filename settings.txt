@@ -5,12 +5,12 @@ margin l 0
 bg color #ffffff
   transparent N
 node w 0
-  h 100
-  spacing 0
+  h 85
+  spacing 100
   border 0
   theme a
   color #888888
-  opacity 1
+  opacity 0
 flow curvature 0.5
   inheritfrom source
   color #999999
@@ -45,5 +45,5 @@ themeoffset a 6
   b 0
   c 0
   d 0
-meta mentionsankeymatic N
+meta mentionsankeymatic Y
   listimbalances Y

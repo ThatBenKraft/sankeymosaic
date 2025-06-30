@@ -10,8 +10,17 @@ def main() -> None:
     """
     # Create directory path
     directory_path = Path(__file__).parent
-    # Create image path
-    image_path = directory_path / "samples" / "craig.png"
+    samples_path = directory_path / "assets" / "samples"
+
+    while True:
+        image_filename = input("Please enter image filename within 'assets/samples/': ")
+
+        image_path = samples_path / image_filename
+
+        if not image_path.exists():
+            print(f"Invalid filename. Check to see if '{image_filename}' is in assets/samples/.\n")
+        else:
+            break
 
     # Open settings file to read
     with open(directory_path / "settings.txt") as settings_file:
@@ -23,6 +32,8 @@ def main() -> None:
                 output_file.writelines(get_flows(image))
             # Write default settings to output file
             output_file.writelines(settings_file.readlines())
+    
+    print(f"\nMosaic created using '{image_filename}'! Resulting Sankey input within 'output.txt'")
 
 
 def get_flows(image: Image.Image, scale: float = DEFAULT_SCALE) -> list[str]:
@@ -64,4 +75,7 @@ def get_flows(image: Image.Image, scale: float = DEFAULT_SCALE) -> list[str]:
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\nEnding mosaic!")
